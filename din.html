@@ -1,0 +1,109 @@
+<html ng-app="ionicApp">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+<title>Ionic Example</title>
+<link href="ionic.css" rel="stylesheet">
+<script src="ionic.bundle.js"></script>
+  <script>
+  angular.module('ionicApp', ['ionic'])
+
+.config(function($stateProvider, $urlRouterProvider) {
+
+  $stateProvider
+    .state('tabs', {
+      url: "/tab",
+      abstract: true,
+      templateUrl: "templates/tabs.html"
+    })
+    .state('tabs.home', {
+      url: "/home",
+      views: {
+        'home-tab': {
+          templateUrl: "templates/home.html",
+          controller: 'HomeTabCtrl'
+        }
+      }
+    })
+    .state('tabs.facts', {
+      url: "/facts",
+      views: {
+        'home-tab': {
+          templateUrl: "templates/facts.html"
+        }
+      }
+    })
+    .state('tabs.facts2', {
+      url: "/facts2",
+      views: {
+        'home-tab': {
+          templateUrl: "templates/facts2.html"
+        }
+      }
+    })
+    .state('tabs.about', {
+      url: "/about",
+      views: {
+        'about-tab': {
+          templateUrl: "templates/about.html"
+        }
+      }
+    })
+    .state('tabs.navstack', {
+      url: "/navstack",
+      views: {
+        'about-tab': {
+          templateUrl: "templates/nav-stack.html"
+        }
+      }
+    })
+    .state('tabs.contact', {
+      url: "/contact",
+      views: {
+        'contact-tab': {
+          templateUrl: "templates/contact.html"
+        }
+      }
+    });
+
+
+   $urlRouterProvider.otherwise("/tab/home");
+
+})
+
+.controller('HomeTabCtrl', function($scope, $ionicModal) {
+  console.log('HomeTabCtrl');
+  $ionicModal.fromTemplateUrl('templates/mylongform.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal;
+    });
+  $scope.openModal = function(){
+    $scope.modal.show();
+  }
+  $scope.closeModal = function(){
+    $scope.modal.hide();
+  }
+});
+
+  </script>
+</head>
+<body>
+
+
+<ion-header-bar class="bar-assertive">
+      <h1 class="title">WhatApp</h1>
+    </ion-header-bar>
+	
+
+
+ <ion-footer-bar class="bar-assertive">
+ <h2 class="title">Copyright @ 2016 Dinesh Vasan</h2>
+</ion-footer-bar>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html ng-app="ionicApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+  <title>Ionic Modals</title>
+
+  <link href="ionic.css" rel="stylesheet">
+  <script src="ionic.bundle.js"></script>
+  <script>
+  angular.module('ionicApp', ['ionic'])
+
+.controller('MainCtrl', function($scope, $ionicPopup) {
+  $scope.data = {}
+    $scope.devList = [
+    { text: "HTML5", checked: false },
+	{ text: "CSS3", checked: false }
+  ];
+  // Triggered on a button click, or some other target
+  $scope.showPopup = function() {
+    var alertPopup = $ionicPopup.alert({
+      title: 'Virus !',
+      template: 'Malware virus'
+    });
+    };
+});
+  
+  
+  </script>
+  <style>
+  img{
+  object-fit:cover;
+}
+
+.color-white {
+  color: #ffffff !important;
+}
+
+/*Profile Starts*/
+.img-circle {
+  border-radius: 50%;
+}
+
+
+.about-header {
+  /*background-color: #444;*/
+  height: 230px;
+  overflow: hidden;
+  /*box-shadow: 0 -70px 150px;*/
+}
+.about-image {
+  width: 100%;
+  /*height: 220px;*/
+  height: 100%;
+  object-fit:cover;
+}
+.profile-media {background: #000; min-height: 237px; overflow: hidden; position: relative;}
+.profile-media .profile-background-image {
+  opacity: 0.3;
+  position: absolute;
+  object-cover:fit;
+  top:-100%;
+  left:0;
+  right: 0;
+  bottom:-100%;
+  margin: auto;
+}
+.profile-media .profile-details {text-align: center; position: absolute; width: 100%; color: #fff; padding: 20px 5% 0 5%;}
+.profile-media .profile-details .profile-image {width: 76px;height:76px;object-cover:fit; border: 4px solid rgba(255, 255, 255, 0.9);}
+
+  </style>
+</head>
+<body ng-controller="MainCtrl">
+<!--
+<div class="bar bar-header bar-balanced">
+   <button class="button icon ion-navicon"></button>
+	<h1 class="title">WhatsApp</h1>
+    <button class="button icon ion-search"></button>
+</div> -->
+<ion-header-bar class="bar-balanced"> 
+<button class="button button-icon icon ion-navicon"></button>
+<h1 class="title">SDP TEAM</h1>
+    <button class="button button-icon icon ion-compose"></button>
+</ion-header-bar>
+<!--
+<div class="bar bar-subheader bar-assertive" style="position: fixed">
+<h2 class="title">Dinesh Vasan</h2>
+</div> 
+-->
+
+
+
+ <ion-content overflow-scroll='false' delegate-handle="userDetailContent" on-scroll="onUserDetailContentScroll()" header-shrink scroll-event-interval="5">
+      <div class="about-header">
+          <ion-slide-box auto-play="false" show-pager="false">
+            <ion-slide>
+            <div class="profile-media">
+              <div class="profile-details">
+                <img  ng-src="team.jpg" class="img-circle profile-image">
+                <h5 class="color-white">
+                  Programmers
+                </h5>
+                <p>
+                  SDP Team Members
+                </p>
+              </div>
+              <img ng-src="team.jpg" class="about-image profile-background-image" style="vertical-align:middle;">
+            </div>
+            </ion-slide>
+          </ion-slide-box>
+ </div>
+<div class="bar bar-subheader bar-assertive" style="position: initial">
+<h2 class="title">Dinesh Vasan</h2>
+</div>  
+  <div class="row positive">
+        <div class="col col-50">
+          </div>
+        
+        <div class="col col-50">
+         
+        </div>        
+      </div>
+      
+      <div class="row">
+        <div class="col col-50">                    
+          <button class="button button-large button-full button-dark">
+            <i class="ion-home"></i><br>
+            Home
+          </button>          
+        </div>
+        
+        <div class="col col-50">
+          <button class="button button-large button-full button-energized">
+            <i class="ion-search"></i><br>
+            Search
+          </button>
+        </div>        
+      </div>
+
+      <div class="row">
+        <div class="col col-50">
+          <button class="button button-large button-full button-royal">
+            <i class="ion-log-in"></i><br>
+            Check-In
+          </button>
+        </div>
+        
+        <div class="col col-50">          
+          <button class="button button-large button-full button-assertive">
+            <i class="ion-log-out"></i><br>
+            Check-Out
+          </button>          
+        </div>        
+      </div>
+
+      <div class="row">
+        <div class="col col-50">
+          
+          <button class="button button-large button-full button-balanced">
+            <i class="ion-social-whatsapp"></i><br>
+            WhatsApp
+          </button>
+          
+        </div>
+        
+        <div class="col col-50">
+          <button class="button button-large button-full button-positive idpro-button-full">
+            <i class="ion-social-facebook"></i><br>
+            Facebook
+          </button>
+        </div>        
+      </div>
+      </div>
+ 
+ 
+<div class="list list-inset">
+<button class="button button-block">
+   button-block
+</button>
+
+<button class="button button-full button-calm">
+   button-full
+</button>
+</div>
+<div class="list list-inset">
+<div class="item item-divider">Family</div>
+<div class="item">Srinivasan</div>
+<div class="item">Umamakahwari</div>
+<div class="item">Dineshvasan</div>
+<div class="item">Rajeshvasan</div>
+</div>
+
+<div class="list">
+<div class="item item-icon-left">
+<i class="icon ion-home"></i>
+Left Side Icon
+</div>
+<div class="item item-icon-right">
+<i class="icon ion-star"></i>
+Right Side Icon
+</div>
+<div class="item item-icon-left item-icon-right">
+<i class="icon ion-thumbsup"></i>
+<i class="icon ion-thumbsdown"></i>
+Both side Icon
+</div>
+<div class="item item-icon-left">
+<i class="icon ion-social-angular"></i>
+<span class="text-note">Text Note</span>
+</div>
+
+</div>
+
+<div class="list list-inset">
+<div class="item item-avatar">
+<img src="team.jpg">
+<h3>SDP Team Members</h3>
+</div> 
+<div class="item item-thumbnail-left">
+<img src="team.jpg">
+<h3>SDP Team Members</h3>
+</div>
+</div>
+
+<div class="card">
+<div class="item">
+This is a Ionic Card Without Item-text-wrap class.
+</div>
+<div class="item item-text-wrap">
+This is a Ionic Card Without Item-text-wrap class.
+</div>
+</div>
+
+<div class="card list">
+<div class="item item-divider">
+Card Header
+</div>
+<div class="item">
+This is a Ionic Card Without Item-text-wrap class.
+</div>
+<div class="item item-divider">
+Card Footer
+</div>
+</div>
+
+<div class="card">
+<div class="item item-avatar">
+<img src="team.jpg"/>
+<h2>SDP Team Members</h2>
+</div>
+<div class="item item-body">
+<img class="full-image" src="team.jpg"/>
+SDP Team Members
+</div>
+</div>
+
+<div class="list list-inset">
+<label class="item item-input">
+<input type="text" placeholder="Username"/>
+</label>
+</div>
+
+<div class="list list-inset">
+<label class="item item-input">
+<span class="input-label">User Name</span> 
+<input type="text" placeholder="Username"/>
+</label>
+</div>
+
+<div class="list list-inset">
+<label class="item item-input item-stacked-label">
+<span class="input-label">Password</span>
+<input type="password" placeholder="******"/>
+</div>
+
+<div class="list list-inset">
+<label class="item item-input item-floating-label">
+<span class="input-label">User Name</span>
+<input type="text" placeholder="Username"/>
+</label>
+</div>
+
+<div class="list list-inset">
+<div class="item item-input-inset">
+<label class="item item-input-wrapper">
+<input type="text" placeholder="User Name"/>
+</label>
+<button class="button button-positive">Submit</button>
+</div>
+
+<div class="item item-input-inset">
+<label class="item item-input-wrapper">
+<i class="icon ion-android-lock"></i>
+<input type="text" placeholder="User Name"/>
+</label>
+</div>
+
+</div>
+
+<label class="toggle">
+<input type="checkbox">
+<div class="track">
+<div class="handle"></div>
+</div>
+</label>
+<label class="toggle toggle-positive">
+<input type="checkbox">
+<div class="track">
+<div class="handle"></div>
+</div>
+</label>
+
+<ul class="list list-inset">
+<li class="item item-toggle">
+Toggle Light
+<label class="toggle toggle-light">
+<input type="checkbox">
+<div class="track">
+<div class="handle"></div>
+</li>
+<li class="item item-toggle">
+         Toggle Stable
+         <label class="toggle toggle-stable">
+             <input type="checkbox">
+             <div class="track">
+                 <div class="handle"></div>
+             </div>
+         </label>
+     </li>
+
+     <li class="item item-toggle">
+         Toggle Positiv>
+         <label class="toggle toggle-positive">
+             <input type="checkbox">
+             <div class="track">
+                 <div class="handle"></div>
+             </div>
+         </label>
+     </li>
+
+     <li class="item item-toggle">
+         Toggle Calm
+         <label class="toggle toggle-calm">
+             <input type="checkbox">
+             <div class="track">
+                 <div class="handle"></div>
+             </div>
+         </label>
+     </li>
+
+     <li class="item item-toggle">
+         Toggle Balanced
+         <label class="toggle toggle-balanced">
+             <input type="checkbox">
+             <div class="track">
+                 <div class="handle"></div>
+             </div>
+         </label>
+     </li>
+
+     <li class="item item-toggle">
+         Toggle Energized
+         <label class="toggle toggle-energized">
+             <input type="checkbox">
+             <div class="track">
+                 <div class="handle"></div>
+             </div>
+         </label>
+     </li>
+
+     <li class="item item-toggle">
+         Toggle Assertive
+         <label class="toggle toggle-assertive">
+             <input type="checkbox">
+             <div class="track">
+                 <div class="handle"></div>
+             </div>
+         </label>
+     </li>
+
+     <li class="item item-toggle">
+         Toggle Royal
+         <label class="toggle  toggle-royal">
+             <input type="checkbox">
+             <div class="track">
+                 <div class="handle"></div>
+             </div>
+         </label>
+     </li>
+
+     <li class="item item-toggle">
+         Toggle Dark
+         <label class="toggle toggle-dark">
+             <input type="checkbox">
+             <div class="track">
+                 <div class="handle"></div>
+             </div>
+         </label>
+     </li>
+ 
+
+
+</ul>
+
+  <div class="list list-inset">
+        
+        <ion-checkbox ng-repeat="item in devList"
+                      ng-model="item.checked" 
+                      ng-checked="item.checked"
+					  class="checkbox-assertive list-inset">
+          {{ item.text }}
+        </ion-checkbox>
+       
+        </div>
+		
+	<div class="list list-inset">
+	<button ng-click="showPopup()" class="button icon ion-edit button-assertive">Show Popup</button>
+	
+	</div>
+	
+		
+
+ </ion-content>
+ <!--
+ <div class="bar bar-subfooter bar-positive" style="position: fixed">
+<h1 class="title">Srinivasan</title>
+</div>
+ -->
+ <ion-footer-bar class="bar-dark">
+ <h2 class="title">Copyright @ 2016 Dinesh Vasan</h2>
+ 
+ </ion-footer-bar>
+ 
+<!-- 
+<div class="bar bar-subfooter bar-positive" style="position: fixed">
+<h1 class="title">Srinivasan</title>
+</div>
+<div class="bar bar-footer bar-dark">
+<h2 class="title">Copyright @ 2016 Dinesh Vasan</h2>
+</div>
+ -->
+
+</body>
+</html>
